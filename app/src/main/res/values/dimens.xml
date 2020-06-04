@@ -1,0 +1,37 @@
+<resources>
+
+    <!--sign up dialog-->
+    <dimen name="CradRounds">10dp</dimen>
+    <dimen name="Cardelevation">10dp</dimen>
+    <dimen name="CarditemMargin">25dp</dimen>
+
+    <!--Home Fragment-->
+    <dimen name="Bu_Margin">10dp</dimen>
+    <dimen name="Bu_text">20sp</dimen>
+
+    <!--Calc. Fragment-->
+    <dimen name="Text_Size">24sp</dimen>
+    <dimen name="Item_Margin_Top">10dp</dimen>
+    <dimen name="Item_Margin_Side">30dp</dimen>
+
+    <!--semester_dialog.xml.xml-->
+    <dimen name="AddTextSize">16sp</dimen>
+    <dimen name="AddCradRounds">10dp</dimen>
+    <dimen name="AddCardelevation">10dp</dimen>
+    <dimen name="LayoutMargin">10dp</dimen>
+
+    <!--term item.xml-->
+    <dimen name="termTextNameSize">25sp</dimen>
+    <dimen name="termTextSize">20sp</dimen>
+    <dimen name="termCradRounds">10dp</dimen>
+    <dimen name="termCardelevation">10dp</dimen>
+    <dimen name="termMargin">5dp</dimen>
+    <dimen name="termTextMargin">5dp</dimen>
+
+    <!--coarse item.xml-->
+    <dimen name="CoarseItemTextSize">16sp</dimen>
+
+    <!--note.xml-->
+    <dimen name="comment_edittext_margin">10dp</dimen>
+    <dimen name="comment_text_size">18sp</dimen>
+</resources>

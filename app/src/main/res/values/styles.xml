@@ -1,10 +1,149 @@
 <resources>
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
+    <style name="SecoudaryappTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="colorAccentLite">
+        <item name="colorAccent">@color/colorPrimary</item>
+    </style>
+    <!--Style Of Login Activity-->
+    <style name="CheckBox">
+        <item name="colorAccent">@color/colorbuttontext</item>
+        <item name="android:textColorSecondary">@color/colorTextView</item>
+    </style>
+
+    <!--Style Of semester_dialog-->
+    <style name="signupCard">
+        <item name="cardCornerRadius">@dimen/CradRounds</item>
+        <item name="elevation">@dimen/Cardelevation</item>
+    </style>
+
+    <!--Style of MainActivity-->
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <!--Style Of Home Fragment-->
+    <style name="Download_Button" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_margin">@dimen/Bu_Margin</item>
+        <item name="android:drawableLeft">@drawable/ic_note</item>
+        <item name="android:textSize">@dimen/Bu_text</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+    </style> <!--Style Of the first 3 buttons with note icon-->
+    <style name="Link_Button" parent="Download_Button">
+        <item name="android:drawableLeft">@drawable/ic_link</item>
+    </style>                         <!--Style Of the first 3 buttons with note icon-->
+
+    <!--Style Of Calc Fragment-->
+    <style name="Calc_EditText">
+        <item name="android:textSize">@dimen/Text_Size</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/Item_Margin_Top</item>
+        <item name="android:layout_marginRight">@dimen/Item_Margin_Side</item>
+        <item name="android:layout_marginLeft">@dimen/Item_Margin_Side</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style> <!--Style Of All 4 EditText in Fragment-->
+    <style name="Calc_BU" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:text">@string/Button_GPA</item>
+        <item name="android:textSize">@dimen/Text_Size</item>
+        <item name="android:layout_marginTop">@dimen/Item_Margin_Top</item>
+        <item name="android:layout_marginRight">@dimen/Item_Margin_Side</item>
+        <item name="android:layout_marginLeft">@dimen/Item_Margin_Side</item>
+        <item name="android:textColor">@color/colorbuttontext</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style> <!--Style Of Calc. Button-->
+
+    <!--Style Of semester_dialog-->
+    <style name="ADDCard">
+        <item name="cardCornerRadius">@dimen/CradRounds</item>
+        <item name="elevation">@dimen/Cardelevation</item>
+    </style> <!--Style Of The Card-->
+    <style name="ADDText" parent="Base.Widget.MaterialComponents.TextInputEditText">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/AddTextSize</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:inputType">numberDecimal</item>
+    </style> <!--Style Of GPA&&Hours EditText-->
+    <style name="ADDButtons" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">@dimen/AddTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+    </style> <!--Style of Buttons ADD && Cancel-->
+
+    <!--Style of term item.xml-->
+    <style name="TermCard">
+        <item name="android:layout_margin">@dimen/termMargin</item>
+        <item name="cardCornerRadius">@dimen/termCradRounds</item>
+        <item name="elevation">@dimen/termCardelevation</item>
+    </style> <!--Style Of The Card-->
+    <style name="termTitle">
+        <item name="android:layout_margin">@dimen/termMargin</item>
+        <item name="android:textSize">@dimen/termTextNameSize</item>
+        <item name="android:textColor">@color/Se_text_color</item>
+        <item name="android:textAlignment">center</item>
+    </style> <!--Style Of The Title-->
+    <style name="termText" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_weight">1</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">@dimen/termTextSize</item>
+        <item name="android:textColorHint">@color/colorPrimaryDark</item>
+        <item name="android:layout_margin">@dimen/termTextMargin</item>
+    </style> <!--Style Of The GPA&&Hours EditText And Edit ImageButton-->
+
+    <!--Style of coarse_dialog.xml-->
+    <!--Style Of The Card-->
+    <style name="CoarseCard" parent="ADDCard" />
+
+    <style name="CoarseEditText" parent="ADDText" /> <!--Style Of The EditText-->
+
+    <!--Style of coarse item.xml-->
+    <style name="coarseItemEditText" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColorHint">@color/Se_text_color</item>
+        <item name="android:textSize">@dimen/CoarseItemTextSize</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="coarseCodeEditText" parent="Base.Widget.AppCompat.Button.Borderless">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/CoarseItemTextSize</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+
+    <!--Style Of The Card-->
+    <style name="comment_EditText">
+        <item name="android:hint">@string/comment_hint</item>
+        <item name="android:textSize">@dimen/comment_text_size</item>
+        <item name="android:textColor">@color/colorBackground</item>
+        <item name="android:layout_marginLeft">@dimen/comment_edittext_margin</item>
+        <item name="android:layout_marginRight">@dimen/comment_edittext_margin</item>
+        <item name="android:layout_marginTop">@dimen/comment_edittext_margin</item>
+    </style>  <!--Style Of The EditText-->
+    <style name="comment_Buttons" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorBackground</item>
+    </style>  <!--Style Of Both Buttons Cancel && Comment-->
+
 
 </resources>

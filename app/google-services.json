@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "777443407958",
+    "firebase_url": "https://fosau-f5775.firebaseio.com",
+    "project_id": "fosau-f5775",
+    "storage_bucket": "fosau-f5775.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:777443407958:android:83ee8ebc90711a9df9a3f7",
+        "android_client_info": {
+          "package_name": "com.peter_kameel.fos_au"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "777443407958-09ikpjj0ihgv6ajqnlvdngu47bt7f1ft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNcTp6vEsgaf9nKuSTFQcDUQq8eKVy9KE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "777443407958-09ikpjj0ihgv6ajqnlvdngu47bt7f1ft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

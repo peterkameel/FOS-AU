@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/ade_banner_id"></com.google.android.gms.ads.AdView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/adView">
+
+        <!--Classrooms-->
+        <Button
+            android:id="@+id/Classrooms_BU"
+            style="@style/Download_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Classroom_BU"
+            ads:layout_constraintBottom_toTopOf="@+id/Guide_BU"
+            ads:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <!--Student Guide-->
+        <Button
+            android:id="@+id/Guide_BU"
+            style="@style/Download_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Guide_BU"
+            ads:layout_constraintBottom_toTopOf="@+id/Schedules_BU"
+            ads:layout_constraintTop_toBottomOf="@+id/Classrooms_BU"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <!--Schedules Link-->
+        <Button
+            android:id="@+id/Schedules_BU"
+            style="@style/Link_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/SCHEDULE"
+            ads:layout_constraintBottom_toTopOf="@+id/Survey_BU"
+            ads:layout_constraintTop_toBottomOf="@+id/Guide_BU"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <!--Survey Link-->
+        <Button
+            android:id="@+id/Survey_BU"
+            style="@style/Link_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Surveys"
+            ads:layout_constraintBottom_toTopOf="@+id/Email_BU"
+            ads:layout_constraintTop_toBottomOf="@+id/Schedules_BU"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <!--Email-->
+        <Button
+            android:id="@+id/Email_BU"
+            style="@style/Link_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Email"
+            ads:layout_constraintBottom_toTopOf="@+id/Affairs_BU"
+            ads:layout_constraintTop_toBottomOf="@+id/Survey_BU"
+            tools:layout_editor_absoluteX="10dp" />
+
+        <!--Affairs-->
+        <Button
+            android:id="@+id/Affairs_BU"
+            style="@style/Link_Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Affairs"
+            ads:layout_constraintBottom_toBottomOf="parent"
+            ads:layout_constraintTop_toBottomOf="@+id/Email_BU"
+            tools:layout_editor_absoluteX="10dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

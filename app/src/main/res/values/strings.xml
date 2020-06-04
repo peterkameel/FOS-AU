@@ -1,3 +1,89 @@
 <resources>
     <string name="app_name">FOS-AU</string>
+
+    <!--Login Activity-->
+    <string name="welcome_back">Welcome Back</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="Remember">Remember Me</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="login">Login</string>
+    <string name="Guide">Faculty of science Assiut University</string>
+
+    <!--Sign Up Dialog-->
+    <string name="signup">Sign Up</string>
+    <string name="name">User Name</string>
+    <string name="welcom">Welcome With Us</string>
+
+    <!--Tab_Home-->
+    <string name="Classroom_BU">Stands/Classrooms</string>
+    <string name="Guide_BU">Student Guide</string>
+    <string name="Exams_BU">First year Exams</string>
+    <string name="SCHEDULE">SCHEDULE Link</string>
+    <string name="Surveys">SURVEYS Link</string>
+    <string name="Email">ACADEMIC Email</string>
+    <string name="Affairs">Students Affairs</string>
+
+
+    <!--Calc Frag-->
+    <string name="Last_GPA">Enter Last GPA</string>
+    <string name="Last_Hours">Enter Last Hours</string>
+    <string name="Term_GPA">Enter Term GPA</string>
+    <string name="Term_Hours">Enter Term Hours</string>
+    <string name="Button_GPA">Calc. Your GPA</string>
+
+    <!--semester_dialogalog.xml-->
+    <string name="TermName">Name EX: First Semester</string>
+    <string name="TermGPA">GPA</string>
+    <string name="TermHours">Hours</string>
+    <string name="AddCancel">Cancel</string>
+    <string name="AddTerm">ADD</string>
+
+    <!--semester item.xml-->
+    <string name="semestername">titel of the semster </string>
+    <string name="semesterGPA">"GPA: "</string>
+    <string name="semesterhour">"Hours: "</string>
+    <string name="semstercourse">Total Courses:</string>
+
+    <!--coarse_dialog.xml-->
+    <string name="CoarseHours">Hours</string>
+    <string name="CoarseDeg">Deg.</string>
+    <string name="CoarseCode">Code</string>
+
+    <!--Course item.xml-->
+    <string name="course_title">Course Title</string>
+    <string name="hours">Hours:</string>
+    <string name="gpa">GPA:</string>
+
+    <!--inter.xml-->
+    <string name="comment_hint">Write your Note</string>
+    <string name="comment_cancel">Cancel</string>
+    <string name="comment_ok">Enter</string>
+
+    <!--navigation menu-->
+    <string name="setting">Data Setting</string>
+    <string name="back_up">Back Up &amp; Sync</string>
+    <string name="restor_data">Restor data</string>
+    <string name="account">Account</string>
+    <string name="user_name">User Name</string>
+    <string name="change_password">Change Password</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="logout">Logout</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
+    <!--Model String-->
+    <string name="restoreMassage">Restore Completed</string>
+    <string name="inseartSemester">Semester Add Successful</string>
+    <string name="note">Enter Your Note</string>
+    <string name="addsemester">AddSemester</string>
+    <string name="totalGPA">totalGPA</string>
+    <string name="privacy">Privacy</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="accept">Next</string>
+
+    <string name="ade_banner_id">ca-app-pub-6968174128232565/3969853491</string>
+    <string name="accept_privacy">"Accept Terms and Conditions"</string>
+    <string name="terms"><![CDATA[Terms & Conditions]]></string>
+
 </resources>

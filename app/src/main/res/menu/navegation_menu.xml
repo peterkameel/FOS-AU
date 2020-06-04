@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/setting"
+        android:title="@string/setting">
+        <menu>
+            <item
+                android:id="@+id/backup"
+                android:icon="@drawable/ic_backup_24px"
+                android:title="@string/back_up"
+                app:actionLayout="@layout/switch_item"
+                app:showAsAction="ifRoom" />
+            <item
+                android:id="@+id/restor"
+                android:icon="@drawable/ic_restore_24px"
+                android:title="@string/restor_data" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/acount"
+        android:title="@string/account">
+        <menu>
+            <item
+                android:id="@+id/name"
+                android:icon="@drawable/ic_perm_identity_24px"
+                android:title="@string/user_name" />
+            <item
+                android:id="@+id/password"
+                android:icon="@drawable/ic_vpn_key_24px"
+                android:title="@string/change_password" />
+            <item
+                android:id="@+id/picture"
+                android:icon="@drawable/ic_account_circle_24px"
+                android:title="@string/profile_picture" />
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_exit_to_app_black_24dp"
+                android:title="@string/logout" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/privacy"
+        android:title="@string/privacy">
+        <menu>
+            <item
+                android:id="@+id/privacyPolicy"
+                android:title="@string/privacy_policy" />
+        </menu>
+    </item>
+</menu>
