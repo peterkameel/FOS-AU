@@ -1,5 +1,6 @@
 package com.peter_kameel.fos_au.helper.adapters
 
+
 import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
@@ -16,9 +17,8 @@ import com.peter_kameel.fos_au.data.RoomDB
 import com.peter_kameel.fos_au.databinding.CoarseItemBinding
 import com.peter_kameel.fos_au.helper.CoroutineHelper
 import com.peter_kameel.fos_au.pojo.CoarseEntity
+import com.peter_kameel.fos_au.ui.fragment.GPAFrag
 import kotlinx.android.synthetic.main.coarse_dialog.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers.IO
 
 class CoarseAdapter(
     private val context: Context,
@@ -28,7 +28,6 @@ class CoarseAdapter(
 
     private val room by lazy { RoomDB.room(context) }
     private val repository by lazy { RoomRepository(context) }
-    private val scope by lazy { CoroutineScope(IO) }
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): ViewHolder {
         return ViewHolder(
@@ -95,8 +94,9 @@ class CoarseAdapter(
                     CoroutineHelper.ioToMain(
                         { repository.editCourse(course1) },
                         {
-                            notifyDataSetChanged()
+                            this.notifyDataSetChanged()
                             Toast.makeText(context, "Edit Success", Toast.LENGTH_SHORT).show()
+                            //update gpa after edit
                             dialog.dismiss()
                         })
                 }//End when
@@ -120,7 +120,10 @@ class CoarseAdapter(
         builder.setPositiveButton("YES") { _, _ ->
             CoroutineHelper.ioToMain(
                 { room.deleteCourse(course) },
-                { notifyDataSetChanged() })
+                {
+                    notifyDataSetChanged()
+                    //update gpa after delete the course
+                })
         }
         // Display a neutral button on alert dialog
         builder.setNeutralButton("Cancel") { dialog, _ -> dialog.dismiss() }

@@ -108,12 +108,9 @@ class SemesterAdapter(
             var x = 0.0
             if (list != null) {
                 for (item in list) {
-                    if (item.name == "0") {
-                        x += (item.deg.toDouble() * item.hour.toInt())
-                    } else {
                         val point = when {
                             item.deg.toInt() < 50 -> 0.0
-                            item.deg.toInt() in 51..54 -> 1.0
+                            item.deg.toInt() in 50..54 -> 1.0
                             item.deg.toInt() in 55..59 -> 1.3
                             item.deg.toInt() in 60..62 -> 1.7
                             item.deg.toInt() in 63..64 -> 2.0
@@ -123,16 +120,16 @@ class SemesterAdapter(
                             item.deg.toInt() in 80..84 -> 3.3
                             item.deg.toInt() in 85..89 -> 3.7
                             item.deg.toInt() in 90..100 -> 4.0
-                            else -> 0.0
+                            else -> item.deg.toDouble()
                         }
-                        x += (point * item.hour.toInt())
-                    }
+                    x += (point * item.hour.toInt())
+
                 }
             }
-            if (x > 0) {
-                return x / getHours(list)
+            return if (x > 0) {
+                x / getHours(list)
             } else {
-                return 0.0
+                0.0
             }
         }
 

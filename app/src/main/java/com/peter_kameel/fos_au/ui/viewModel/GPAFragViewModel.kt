@@ -11,6 +11,7 @@ import com.peter_kameel.fos_au.pojo.SemesterEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
+import java.util.logging.Logger
 
 class GPAFragViewModel(application: Application) : AndroidViewModel(application) {
     val semesterLiveData: MutableLiveData<List<SemesterEntity>> by lazy { MutableLiveData<List<SemesterEntity>>() }
@@ -32,6 +33,12 @@ class GPAFragViewModel(application: Application) : AndroidViewModel(application)
     }
 
     //fun to calc GPA
+    fun showgpa() {
+        CoroutineHelper.ioToMain(
+            { repository.getSemesters() },
+            { it?.let { it1 -> calcGPA(it1) } })
+    }
+
     fun calcGPA(list: List<SemesterEntity>) {
         var totalPoints = 0.0
         var totalHours = 0

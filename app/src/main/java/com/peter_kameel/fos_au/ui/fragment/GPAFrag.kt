@@ -21,6 +21,7 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.material.snackbar.Snackbar
 import com.peter_kameel.fos_au.interfaces.AdaptersListener
 import com.peter_kameel.fos_au.R
+import com.peter_kameel.fos_au.data.repository.RoomRepository
 import com.peter_kameel.fos_au.ui.viewModel.GPAFragViewModel
 import com.peter_kameel.fos_au.data.util.ShareTAG
 import com.peter_kameel.fos_au.data.util.SharedPrefs
@@ -68,11 +69,11 @@ class GPAFrag : Fragment(), AdaptersListener {
             it?.let { fragModel.calcGPA(it) }
         }
         //Observe the total GPA
-        fragModel.gpaLiveData.observe(viewLifecycleOwner, Observer {
+        fragModel.gpaLiveData.observeForever {
             val snack = Snackbar.make(view, "GPA : $it", Snackbar.LENGTH_INDEFINITE)
             snack.setAction("Close", View.OnClickListener { snack.dismiss() })
             snack.show()
-        })
+        }
 
         //add anew semester
         view.Semester_fab.setOnClickListener { interSemester() }
@@ -103,7 +104,6 @@ class GPAFrag : Fragment(), AdaptersListener {
             R.id.note -> updateNote(semester.id, semester.note)
         }
     }
-
 
     //fun for this fragment
     private fun interSemester() {
@@ -158,7 +158,7 @@ class GPAFrag : Fragment(), AdaptersListener {
                     {
                         //Notify Coarse adapter that data is changed
                         adapter.notifyDataSetChanged()
-                        dialog.dismiss() // Dismiss dialoge
+                        dialog.dismiss() // Dismiss dialog
                     })
             } else {
                 //Check if all data is field

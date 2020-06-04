@@ -82,7 +82,8 @@
     <string name="privacy_policy">Privacy Policy</string>
     <string name="accept">Next</string>
 
-    <string name="ade_banner_id">ca-app-pub-6968174128232565/3969853491</string>
+    <!--ca-app-pub-6968174128232565/3969853491-->
+    <string name="ade_banner_id">ca-app-pub-3940256099942544/6300978111</string>
     <string name="accept_privacy">"Accept Terms and Conditions"</string>
     <string name="terms"><![CDATA[Terms & Conditions]]></string>
 
