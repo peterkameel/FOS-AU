@@ -17,7 +17,6 @@ import com.peter_kameel.fos_au.data.RoomDB
 import com.peter_kameel.fos_au.databinding.CoarseItemBinding
 import com.peter_kameel.fos_au.helper.CoroutineHelper
 import com.peter_kameel.fos_au.pojo.CoarseEntity
-import com.peter_kameel.fos_au.ui.fragment.GPAFrag
 import kotlinx.android.synthetic.main.coarse_dialog.*
 
 class CoarseAdapter(

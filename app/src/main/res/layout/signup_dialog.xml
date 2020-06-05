@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_alignParentRight="true"
     android:orientation="vertical"
-    tools:context=".ui.activity.LoginActivity">
+    tools:context=".ui.activity.login.LoginActivity">
 
     <androidx.cardview.widget.CardView
         style="@style/signupCard"

@@ -87,4 +87,8 @@
     <string name="accept_privacy">"Accept Terms and Conditions"</string>
     <string name="terms"><![CDATA[Terms & Conditions]]></string>
 
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Calculate</string>
+    <string name="title_notifications">GPA</string>
+
 </resources>

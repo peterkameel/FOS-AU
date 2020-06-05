@@ -47,16 +47,18 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.3.0'
     implementation "androidx.fragment:fragment-ktx:1.2.4"
 
+
     // implement material design
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:28.0.0'
 
-// implement Retrofit
+    // implement Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.8.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.8.0'
     implementation("com.squareup.okhttp3:logging-interceptor:4.4.0")
-    //noinspection GradleCompatible
-    implementation 'com.android.support:design:28.0.0'
+
 
     // implement Room DB
     def room_version = "2.2.5"

@@ -9,7 +9,7 @@
     android:layout_marginStart="20dp"
     android:layout_marginTop="20dp"
     android:orientation="vertical"
-    tools:context=".ui.activity.LoginActivity">
+    tools:context=".ui.activity.login.LoginActivity">
 
     <ImageView
         android:id="@+id/ImageView"
