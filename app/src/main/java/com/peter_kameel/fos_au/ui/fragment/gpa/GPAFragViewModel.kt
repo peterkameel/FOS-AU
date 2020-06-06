@@ -10,6 +10,7 @@ import com.peter_kameel.fos_au.pojo.CoarseEntity
 import com.peter_kameel.fos_au.pojo.SemesterEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
+import kotlinx.coroutines.Dispatchers.Main
 import kotlinx.coroutines.launch
 import java.util.logging.Logger
 
@@ -28,16 +29,22 @@ class GPAFragViewModel(application: Application) : AndroidViewModel(application)
     //fun get semester list
     suspend fun getSemester() {
         CoroutineHelper.ioToMain(
-            { repository.getSemesters() }, // insert semester to room
+            { repository.getSemesters() }, // get semester from room
             { semesterLiveData.postValue(it) })
     }
 
 
-    fun calcGPA(list: List<SemesterEntity>) {
+    fun getGPA() {
+        CoroutineHelper.ioToMain(
+            { repository.getSemesters() },
+            { it?.let { it1 -> calcGPA(it1) } })
+    }
+
+    private fun calcGPA(list: List<SemesterEntity>) {
         var totalPoints = 0.0
         var totalHours = 0
         for (item in list) {
-            CoroutineScope(IO).launch {
+            CoroutineScope(Main).launch {
                 CoroutineHelper.ioToMain(
                     { repository.getCoarseAsync(item.id) },
                     {

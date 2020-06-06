@@ -119,10 +119,8 @@ class CoarseAdapter(
         builder.setPositiveButton("YES") { _, _ ->
             CoroutineHelper.ioToMain(
                 { room.deleteCourse(course) },
-                {
-                    notifyDataSetChanged()
-                    //update gpa after delete the course
-                })
+                {})
+            this.notifyDataSetChanged()
         }
         // Display a neutral button on alert dialog
         builder.setNeutralButton("Cancel") { dialog, _ -> dialog.dismiss() }

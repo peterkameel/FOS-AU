@@ -76,8 +76,12 @@ class LoginActivity : AppCompatActivity() {
         })
         //Observe on Sign Up live Data from ViewModel
         model.signUPLiveData.observe(this, Observer<UserRequest> {
-            Toast.makeText(this, it.massage, Toast.LENGTH_LONG).show()
+            Toast.makeText(applicationContext, it.massage, Toast.LENGTH_LONG).show()
         })
+        //Observe on api error massage
+        model.errorMassage.observeForever {
+            Toast.makeText(this, it, Toast.LENGTH_SHORT).show()
+        }
 
         //Call login fun from ViewModel
         loginButton.setOnClickListener {

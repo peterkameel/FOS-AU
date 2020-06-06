@@ -90,5 +90,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Calculate</string>
     <string name="title_notifications">GPA</string>
+    <string name="addNewSemester">Add New Semester</string>
+    <string name="calc_gpa">"Calculate GPA "</string>
 
 </resources>

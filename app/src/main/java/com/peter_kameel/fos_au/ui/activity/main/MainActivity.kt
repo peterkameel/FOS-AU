@@ -120,7 +120,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         when (it.itemId) {
             R.id.navigation_home -> fragment = MainFrag()
             R.id.navigation_dashboard -> fragment = CalcFrag()
-            R.id.navigation_notifications -> fragment = GPAFrag()
+            R.id.navigation_gpa -> fragment = GPAFrag()
         }
         supportFragmentManager.beginTransaction().replace(R.id.container, fragment).commit()
         return@OnNavigationItemSelectedListener true

@@ -19,7 +19,7 @@ interface RetrofitInterface {
     suspend fun login(
         @Field("email") email: String,
         @Field("password") password: String
-    ): Response<UserRequest>
+    ): UserRequest
 
 
     @FormUrlEncoded
@@ -28,21 +28,21 @@ interface RetrofitInterface {
         @Field("username") username: String,
         @Field("email") email: String,
         @Field("password") password: String
-    ): Response<UserRequest>
+    ): UserRequest
 
 
     //fun to sync data
     @POST("/api/syncs")
-    suspend fun syncSemester(@Body semester: List<SemesterEntity>): Response<DataRequest>
+    suspend fun syncSemester(@Body semester: List<SemesterEntity>): DataRequest
 
     @POST("/api/syncc")
-    suspend fun syncCourse(@Body course: List<CoarseEntity>): Response<DataRequest>
+    suspend fun syncCourse(@Body course: List<CoarseEntity>): DataRequest
 
     //fun to restore data from server
     //fun to sync data
     @FormUrlEncoded
     @POST("/api/restore")
-    suspend fun restoreAsync(@Field("userid") id: String): Response<DataRequest>
+    suspend fun restoreAsync(@Field("userid") id: String): DataRequest
 
     //fun for update user data
     @FormUrlEncoded
@@ -50,7 +50,7 @@ interface RetrofitInterface {
     suspend fun updateName(
         @Field("email") email: String,
         @Field("username") username: String
-    ): Response<UserRequest>
+    ): UserRequest
 
 
     @FormUrlEncoded
@@ -59,5 +59,5 @@ interface RetrofitInterface {
         @Field("email") email: String,
         @Field("password") password: String,
         @Field("newpassword") newpassword: String
-    ): Response<UserRequest>
+    ): UserRequest
 }

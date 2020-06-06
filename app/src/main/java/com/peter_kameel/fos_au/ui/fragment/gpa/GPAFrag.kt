@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.snackbar.Snackbar
 import com.peter_kameel.fos_au.interfaces.AdaptersListener
 import com.peter_kameel.fos_au.R
@@ -21,6 +22,7 @@ import com.peter_kameel.fos_au.helper.CoroutineHelper
 import com.peter_kameel.fos_au.helper.adapters.SemesterAdapter
 import com.peter_kameel.fos_au.pojo.CoarseEntity
 import com.peter_kameel.fos_au.pojo.SemesterEntity
+import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.coarse_dialog.*
 import kotlinx.android.synthetic.main.gpa_fragment.view.*
 import kotlinx.android.synthetic.main.inter_dialog.*
@@ -43,8 +45,10 @@ class GPAFrag : Fragment(), AdaptersListener {
     ): View? {
         val view = inflater.inflate(R.layout.gpa_fragment, container, false)
         fragModel = ViewModelProviders.of(this).get(GPAFragViewModel::class.java)
-        //call fun to get semester data from ViewModel
-        scope.launch { fragModel.getSemester() }
+        //call fun to get semester data from ViewModel then calc gpa
+        CoroutineHelper.ioToMain(
+            { fragModel.getSemester() },
+            { fragModel.getGPA() })
         // RecycleView set LayoutManager
         view.RecycleTerms.setHasFixedSize(true)
         val manager = LinearLayoutManager(context)
@@ -56,8 +60,6 @@ class GPAFrag : Fragment(), AdaptersListener {
             //Recycle View setAdapter
             adapter = SemesterAdapter(requireContext(), this, it)
             view.RecycleTerms.adapter = adapter
-            //show th total gpa in snack bar
-            it?.let { fragModel.calcGPA(it) }
         }
         //Observe the total GPA
         fragModel.gpaLiveData.observeForever {
@@ -67,7 +69,22 @@ class GPAFrag : Fragment(), AdaptersListener {
         }
 
         //add anew semester
-        view.Semester_fab.setOnClickListener { interSemester() }
+        view.Semester_fab.setOnClickListener {
+            //initialize bottom sheet
+            val sheet = BottomSheetDialog(requireContext())
+            val view = layoutInflater.inflate(R.layout.bottom_sheet, null)
+            sheet.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            view.sheet_add_semester.setOnClickListener {
+                interSemester()
+                sheet.dismiss()
+            }
+            view.sheet_calc_gpa.setOnClickListener {
+                fragModel.getGPA()
+                sheet.dismiss()
+            }
+            sheet.setContentView(view)
+            sheet.show()
+        }
 
         //initialize the banner ade
         MobileAds.initialize(context)
