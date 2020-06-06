@@ -223,6 +223,8 @@ class GPAFrag : Fragment(), AdaptersListener {
         val dialog = Dialog(requireContext())
         dialog.setContentView(R.layout.inter_dialog)
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.EnterTextLayout.hint = "Enter Semester Name Ex: First Semester"
+        dialog.EnterText.setText(semester.name)
         //OnClick Add Button Will Save Update Info to Database
         dialog.inter.setOnClickListener {
             val semester1 = SemesterEntity(
