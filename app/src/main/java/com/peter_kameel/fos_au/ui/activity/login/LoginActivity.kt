@@ -91,7 +91,8 @@ class LoginActivity : AppCompatActivity() {
             ).isConnectToInternet
             when {
                 //check mail format
-                !pattern.matcher(emailEditText.text).matches() -> email.error = "Failed Email"
+                !pattern.matcher(emailEditText.text.toString()).matches() -> email.error =
+                    "Failed Email"
                 //check if username field is empty
                 emailEditText.text!!.isEmpty() -> email.error = "This Field Can't be Empty"
                 //check if password field is empty
@@ -135,7 +136,7 @@ class LoginActivity : AppCompatActivity() {
                     dialog.emailEditText_sign.text!!.isEmpty() -> dialog.email_sign.error =
                         "Enter Email"
                     //check mail format
-                    !pattern.matcher(dialog.emailEditText_sign.text)
+                    !pattern.matcher(dialog.emailEditText_sign.text.toString())
                         .matches() -> dialog.email_sign.error =
                         "Failed Email"
                     //check if password field is empty

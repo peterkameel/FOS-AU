@@ -72,17 +72,17 @@ class GPAFrag : Fragment(), AdaptersListener {
         view.Semester_fab.setOnClickListener {
             //initialize bottom sheet
             val sheet = BottomSheetDialog(requireContext())
-            val view = layoutInflater.inflate(R.layout.bottom_sheet, null)
+            val sheetView = layoutInflater.inflate(R.layout.bottom_sheet, null)
             sheet.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            view.sheet_add_semester.setOnClickListener {
+            sheetView.sheet_add_semester.setOnClickListener {
                 interSemester()
                 sheet.dismiss()
             }
-            view.sheet_calc_gpa.setOnClickListener {
+            sheetView.sheet_calc_gpa.setOnClickListener {
                 fragModel.getGPA()
                 sheet.dismiss()
             }
-            sheet.setContentView(view)
+            sheet.setContentView(sheetView)
             sheet.show()
         }
 

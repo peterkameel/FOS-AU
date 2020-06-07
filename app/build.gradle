@@ -13,15 +13,20 @@ android {
         applicationId "com.peter_kameel.fos_au"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
+        versionCode 2
+        versionName "1.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -35,8 +40,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    dataBinding{
-        enabled = true
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
     }
 
 }
@@ -57,7 +63,7 @@ dependencies {
     // implement Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.8.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.8.0'
-    implementation("com.squareup.okhttp3:logging-interceptor:4.4.0")
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
 
 
     // implement Room DB
