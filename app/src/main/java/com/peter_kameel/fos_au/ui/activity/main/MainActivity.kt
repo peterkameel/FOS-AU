@@ -67,25 +67,25 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             .actionView
             .findViewById<Switch>(R.id.backup_Switch)
         backupSwitch.isChecked =
-            SharedPrefs.readSharedBoolean(this, ShareTAG().syncServiceBoolean, false)
+            SharedPrefs.readSharedBoolean(this, ShareTAG.syncServiceBoolean, false)
         backupSwitch.setOnCheckedChangeListener { _: CompoundButton, check: Boolean ->
             if (check) {
-                SharedPrefs.saveSharedBoolean(this, ShareTAG().syncServiceBoolean, true)
+                SharedPrefs.saveSharedBoolean(this, ShareTAG.syncServiceBoolean, true)
             } else {
-                SharedPrefs.saveSharedBoolean(this, ShareTAG().syncServiceBoolean, false)
+                SharedPrefs.saveSharedBoolean(this, ShareTAG.syncServiceBoolean, false)
             }
         }
         //Set content of navigation header
         val header: View = navigation.getHeaderView(0)
         //set header data (Name && Email && Profile photo)
         header.navegationUserName.text =
-            SharedPrefs.readSharedString(this, ShareTAG().userName, "test name")
+            SharedPrefs.readSharedString(this, ShareTAG.userName, "test name")
         header.navegationUserEmail.text =
-            SharedPrefs.readSharedString(this, ShareTAG().userEmail, "test email")
+            SharedPrefs.readSharedString(this, ShareTAG.userEmail, "test email")
         img = header.img_view
         //show the user image
         Glide.with(this)
-            .load(SharedPrefs.readSharedString(this, ShareTAG().userImageUri, ""))
+            .load(SharedPrefs.readSharedString(this, ShareTAG.userImageUri, ""))
             .centerCrop()
             .error(R.drawable.ic_account_circle_24px)
             .into(header.img_view)
@@ -97,9 +97,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         model.userLiveData.observeForever {
             Toast.makeText(this, it.massage, Toast.LENGTH_SHORT).show()
             if (!it.user.username.isNullOrEmpty()) {
-                SharedPrefs.saveSharedString(this, ShareTAG().userName, it.user.username)
+                SharedPrefs.saveSharedString(this, ShareTAG.userName, it.user.username)
             } else if (!it.user.password.isNullOrEmpty()) {
-                SharedPrefs.saveSharedString(this, ShareTAG().userPassword, it.user.password)
+                SharedPrefs.saveSharedString(this, ShareTAG.userPassword, it.user.password)
             }
         }
 
@@ -163,12 +163,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     //fun to logout
     private fun logout() {
         //for not skipping login activity
-        SharedPrefs.saveSharedBoolean(this, ShareTAG().userLoginBoolean, false)
+        SharedPrefs.saveSharedBoolean(this, ShareTAG.userLoginBoolean, false)
         //Delete User information
-        SharedPrefs.saveSharedString(this, ShareTAG().userID, "")
-        SharedPrefs.saveSharedString(this, ShareTAG().userName, "")
-        SharedPrefs.saveSharedString(this, ShareTAG().userEmail, "")
-        SharedPrefs.saveSharedString(this, ShareTAG().userPassword, "")
+        SharedPrefs.saveSharedString(this, ShareTAG.userID, "")
+        SharedPrefs.saveSharedString(this, ShareTAG.userName, "")
+        SharedPrefs.saveSharedString(this, ShareTAG.userEmail, "")
+        SharedPrefs.saveSharedString(this, ShareTAG.userPassword, "")
         //Move to Login activity
         startActivity(Intent(this, LoginActivity::class.java))
         //close this activity
@@ -192,7 +192,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                             model.updateName(
                                 SharedPrefs.readSharedString(
                                     this@MainActivity,
-                                    ShareTAG().userEmail,
+                                    ShareTAG.userEmail,
                                     ""
                                 ),
                                 dialog.EnterText.text.toString()
@@ -212,7 +212,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     //fun to change user password when password item selected from navigation
     private fun changePassword() {
         var x = 0
-        val pass = SharedPrefs.readSharedString(this, ShareTAG().userPassword, "")
+        val pass = SharedPrefs.readSharedString(this, ShareTAG.userPassword, "")
         var newPassword = pass
         //Show SignUp Dialog
         val dialog = Dialog(this)
@@ -250,12 +250,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                                     model.updatePassword(
                                         SharedPrefs.readSharedString(
                                             this,
-                                            ShareTAG().userEmail,
+                                            ShareTAG.userEmail,
                                             ""
                                         ),
                                         SharedPrefs.readSharedString(
                                             this,
-                                            ShareTAG().userPassword,
+                                            ShareTAG.userPassword,
                                             ""
                                         ),
                                         newPassword
@@ -301,9 +301,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 123) {
             //Show the img in img View
-            SharedPrefs.saveSharedString(this, ShareTAG().userImageUri, data?.data.toString())
+            SharedPrefs.saveSharedString(this, ShareTAG.userImageUri, data?.data.toString())
             Glide.with(this)
-                .load(SharedPrefs.readSharedString(this, ShareTAG().userImageUri, ""))
+                .load(SharedPrefs.readSharedString(this, ShareTAG.userImageUri, ""))
                 .centerCrop()
                 .error(R.drawable.ic_account_circle_24px)
                 .into(img)

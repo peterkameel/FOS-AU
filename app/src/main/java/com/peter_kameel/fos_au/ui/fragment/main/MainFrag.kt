@@ -51,7 +51,7 @@ class MainFrag : Fragment() {
                 }
                 //if else download the file
                 else -> {
-                    download(URLString().classroom, "Classrooms.pdf")
+                    download(URLString.classroom, "Classrooms.pdf")
                 }
             }//End when
         }//End Listener
@@ -75,15 +75,15 @@ class MainFrag : Fragment() {
                 }
                 //if else download the file
                 else -> {
-                    download(URLString().guide, "Guide.pdf")
+                    download(URLString.guide, "Guide.pdf")
                 }
             }//End when
         }//End Listener
         //Open Links in Browser
-        view.Schedules_BU.setOnClickListener { openUrl(URLString().Schedules) }
-        view.Survey_BU.setOnClickListener { openUrl(URLString().Survey) }
-        view.Email_BU.setOnClickListener { openUrl(URLString().Email) }
-        view.Affairs_BU.setOnClickListener { openUrl(URLString().Affairs) }
+        view.Schedules_BU.setOnClickListener { openUrl(URLString.Schedules) }
+        view.Survey_BU.setOnClickListener { openUrl(URLString.Survey) }
+        view.Email_BU.setOnClickListener { openUrl(URLString.Email) }
+        view.Affairs_BU.setOnClickListener { openUrl(URLString.Affairs) }
 
         //initialize the banner ade
         MobileAds.initialize(context)

@@ -21,7 +21,7 @@ class SyncService : JobService() {
     private val room by lazy { RoomRepository(application) }
 
     override fun onStartJob(params: JobParameters?): Boolean {
-        if (SharedPrefs.readSharedBoolean(this, ShareTAG().syncServiceBoolean, false)) {
+        if (SharedPrefs.readSharedBoolean(this, ShareTAG.syncServiceBoolean, false)) {
             CoroutineScope(Main).launch {
                 CoroutineHelper.io3Jobs(
                     { room.getUnSyncSemesters() }, //job1 get the un sync Semesters from room DB

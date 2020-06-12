@@ -20,7 +20,7 @@ class MainActivityViewModel(application: Application) : AndroidViewModel(applica
     val restoreLiveData: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val userLiveData: MutableLiveData<UserRequest> by lazy { MutableLiveData<UserRequest>() }
     private val userID by lazy {
-        SharedPrefs.readSharedString(application, ShareTAG().userID, "")
+        SharedPrefs.readSharedString(application, ShareTAG.userID, "")
     }
 
     private val room by lazy { RoomRepository(application) }

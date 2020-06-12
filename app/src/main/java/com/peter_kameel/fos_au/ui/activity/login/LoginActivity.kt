@@ -45,15 +45,15 @@ class LoginActivity : AppCompatActivity() {
             when (it.massage) {
                 "Login Successfull" -> {
                     //Save User Data in SharedPref
-                    SharedPrefs.saveSharedString(this, ShareTAG().userID, it.user.id)
-                    SharedPrefs.saveSharedString(this, ShareTAG().userName, it.user.username)
-                    SharedPrefs.saveSharedString(this, ShareTAG().userEmail, it.user.email)
-                    SharedPrefs.saveSharedString(this, ShareTAG().userPassword, it.user.password)
+                    SharedPrefs.saveSharedString(this, ShareTAG.userID, it.user.id)
+                    SharedPrefs.saveSharedString(this, ShareTAG.userName, it.user.username)
+                    SharedPrefs.saveSharedString(this, ShareTAG.userEmail, it.user.email)
+                    SharedPrefs.saveSharedString(this, ShareTAG.userPassword, it.user.password)
                     //Check Remember me check box
                     if (checkbox.isChecked) {
                         SharedPrefs.saveSharedBoolean(
                             applicationContext,
-                            ShareTAG().userLoginBoolean,
+                            ShareTAG.userLoginBoolean,
                             true
                         )
                     }
@@ -176,12 +176,12 @@ class LoginActivity : AppCompatActivity() {
         val check = java.lang.Boolean.valueOf(
             SharedPrefs.readSharedBoolean(
                 this,
-                ShareTAG().userLoginBoolean,
+                ShareTAG.userLoginBoolean,
                 false
             )
         )
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra(ShareTAG().userLoginBoolean, check)
+        intent.putExtra(ShareTAG.userLoginBoolean, check)
         //The Value if you click on Login Activity and Set the value is FALSE and whe false the activity will be visible
         if (check) {
             startActivity(intent)
@@ -191,7 +191,7 @@ class LoginActivity : AppCompatActivity() {
 
     //fun for privacy policy
     private fun privacy() {
-        if (!SharedPrefs.readSharedBoolean(this, ShareTAG().privacyBoolean, false)) {
+        if (!SharedPrefs.readSharedBoolean(this, ShareTAG.privacyBoolean, false)) {
             login_layout.visibility = GONE
             //Show SignUp Dialog
             val dialog = Dialog(this)
@@ -212,7 +212,7 @@ class LoginActivity : AppCompatActivity() {
             //on click cancel only dismiss the dialog
             dialog.accept.setOnClickListener {
                 login_layout.visibility = VISIBLE
-                SharedPrefs.saveSharedBoolean(this, ShareTAG().privacyBoolean, true)
+                SharedPrefs.saveSharedBoolean(this, ShareTAG.privacyBoolean, true)
                 dialog.dismiss()
             }
             dialog.show()
@@ -230,7 +230,7 @@ class LoginActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == 123) {
             //Show the img in img View
-            SharedPrefs.saveSharedString(this, ShareTAG().userImageUri, data?.data.toString())
+            SharedPrefs.saveSharedString(this, ShareTAG.userImageUri, data?.data.toString())
             Glide.with(this)
                 .load(data?.data)
                 .centerCrop()

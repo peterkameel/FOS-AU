@@ -37,6 +37,4 @@ abstract class RoomDB : RoomDatabase() {
             return RoomDB.getroomdb(context)!!.roomdao()
         }
     }
-
-
 }

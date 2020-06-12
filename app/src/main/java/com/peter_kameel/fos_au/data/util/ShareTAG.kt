@@ -1,6 +1,6 @@
 package com.peter_kameel.fos_au.data.util
 
-class ShareTAG {
+object ShareTAG {
     val userID = "UserID"
     val userName = "userName"
     val userEmail = "userEmail"

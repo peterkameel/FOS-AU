@@ -1,6 +1,6 @@
 package com.peter_kameel.fos_au.data.util
 
-class URLString {
+object URLString {
     val Schedules = "http://sci-credit-reg.com/Default.aspx"
 
     val Survey = "http://195.246.49.14/"
