@@ -30,6 +30,12 @@ interface RetrofitInterface {
         @Field("password") password: String
     ): UserRequest
 
+    @FormUrlEncoded
+    @POST("/user/forget")
+    suspend fun forget(
+        @Field("email") email: String
+    ): UserRequest
+
 
     //fun to sync data
     @POST("/api/syncs")

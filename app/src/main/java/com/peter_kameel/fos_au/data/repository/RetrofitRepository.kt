@@ -18,6 +18,9 @@ class RetrofitRepository(private val api: RetrofitInterface) : SafeRetrofitReque
             api.signUp(username, email, password)
         }
 
+    suspend fun forget(email: String) =
+        apiRequest(this) { api.forget(email) } //send email if password is forget
+
     //fun for MainActivityViewModel
     suspend fun getRestoredData(id: String) =
         apiRequest(this) {

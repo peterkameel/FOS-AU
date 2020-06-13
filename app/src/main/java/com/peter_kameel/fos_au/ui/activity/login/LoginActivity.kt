@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         "^[a-zA-Z0-9#_~!$&'()*+,;=:.\"(),:;<>@\\[\\]\\\\]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*$"
     private val pattern: Pattern = Pattern.compile(EMAIL_PATTERN)
     lateinit var userImg: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -71,6 +72,16 @@ class LoginActivity : AppCompatActivity() {
                 }
                 "Error Try Again" -> {
                     Toast.makeText(this, "Error Try Again", Toast.LENGTH_SHORT).show()
+                }
+                "Email is send" -> {
+                    Toast.makeText(
+                        this,
+                        "Email is send\nMay be it take while to receive the email",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                else -> {
+                    Toast.makeText(this, it.massage, Toast.LENGTH_SHORT).show()
                 }
             }
         })
@@ -168,6 +179,21 @@ class LoginActivity : AppCompatActivity() {
             }
             //show the dialog
             dialog.show()
+        }
+
+        //forget button clicked
+        forgetPass.setOnClickListener {
+            val mail = emailEditText.text.toString()
+            if (mail.isNullOrEmpty()) {
+                email.error = "Enter Your Email"
+            } else {
+                val check: Boolean = InternetConnection(this).isConnectToInternet
+                if (check) {
+                    model.forget(mail)
+                } else {
+                    Toast.makeText(this, "Check internet connection", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 

@@ -1,6 +1,5 @@
 package com.peter_kameel.fos_au.ui.activity.login
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.peter_kameel.fos_au.helper.CoroutineHelper
@@ -28,6 +27,13 @@ class LoginViewModel : ViewModel(), RemoteErrorMassage {
     fun signUP(username: String, email: String, password: String) {
         CoroutineHelper.ioToMain({ repository.signUp(username, email, password) },
             { it?.let { it1 -> signUPLiveData.postValue(it1) } })
+    }
+
+    //forget password fun
+    fun forget(email: String) {
+        CoroutineHelper.ioToMain(
+            { repository.forget(email) },
+            { loginLiveData.postValue(it) })
     }
 
     override fun onError(msg: String) {

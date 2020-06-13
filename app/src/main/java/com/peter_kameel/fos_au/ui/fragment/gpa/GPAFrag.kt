@@ -124,7 +124,7 @@ class GPAFrag : Fragment(), AdaptersListener {
             //insert semester using interSemester fun from ViewModel
             val semester = SemesterEntity(
                 0,
-                SharedPrefs.readSharedString(context, ShareTAG().userID, ""),
+                SharedPrefs.readSharedString(context, ShareTAG.userID, ""),
                 dialog.EnterText.text.toString(),
                 "initial note",
                 false
@@ -154,7 +154,7 @@ class GPAFrag : Fragment(), AdaptersListener {
             if (dialog.CoarseCode.text.toString() == "0") {
                 val coarse = CoarseEntity(
                     0,
-                    SharedPrefs.readSharedString(context, ShareTAG().userID, ""),
+                    SharedPrefs.readSharedString(context, ShareTAG.userID, ""),
                     semester.id.toString(),
                     dialog.CoarseCode.text.toString(),
                     dialog.CoarseDeg.text.toString(),
@@ -187,7 +187,7 @@ class GPAFrag : Fragment(), AdaptersListener {
                     else -> {
                         val coarse = CoarseEntity(
                             0,
-                            SharedPrefs.readSharedString(context, ShareTAG().userID, ""),
+                            SharedPrefs.readSharedString(context, ShareTAG.userID, ""),
                             semester.id.toString(),
                             dialog.CoarseCode.text.toString(),
                             dialog.CoarseDeg.text.toString(),
