@@ -76,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
                 "Email is send" -> {
                     Toast.makeText(
                         this,
-                        "Email is send\nMay be it take while to receive the email",
+                        "Email is send it may be take while to receive the email",
                         Toast.LENGTH_SHORT
                     ).show()
                 }

@@ -13,8 +13,8 @@ android {
         applicationId "com.peter_kameel.fos_au"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 3
-        versionName "1.101"
+        versionCode 5
+        versionName "1.1.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -61,9 +61,9 @@ dependencies {
     implementation 'com.android.support:design:28.0.0'
 
     // implement Retrofit
-    implementation 'com.squareup.retrofit2:retrofit:2.8.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.8.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+   // implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
 
 
     // implement Room DB
@@ -82,7 +82,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 
     //google ads
-    implementation 'com.google.android.gms:play-services-ads:19.1.0'
+    implementation 'com.google.android.gms:play-services-ads-lite:19.1.0'
     //firebase analytics
     implementation 'com.google.firebase:firebase-analytics:17.2.2'
 
